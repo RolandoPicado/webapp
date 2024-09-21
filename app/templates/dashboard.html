@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+	<h2>Dashboard</h2>
+	{% if current_user.is_admin %}
+		<!-- Admin only options -->
+		<a href="{{ url_for('main.create_user') }}" class="btn btn-primary">Create New Sponsor</a>
+		<a href="{{ url_for('main.admin_dashboard') }}" class="btn btn-secondary">View All Sponsors</a>
+	{% else %}
+		<!-- Regular user (sponsor) view -->
+		<h3>Your Sponsorship Details</h3>
+		<p>Company: {{ current:user.sponsor.company_name }}</p>
+		<p>Sponsorship Level: {{ current_user.sponsor.sponsorship_level }}</p>
+	{% endif %}
+</div>
+{% endblock %}

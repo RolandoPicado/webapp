@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+	<h2>Create New Sponsor</h2>
+	<form method="POST">
+		<!-- CSFR protection -->
+		{{ form.hidden_tag() }}
+
+		<!-- Username field -->
+		<div class="form-group">
+			{{ form.username.label }}
+			{{ form.username(class="form-control") }}
+		</div>
+
+		<!-- Password field -->
+		<div class="form-group">
+			{{ form.password.label }}
+			{{ form.password(class="form-control") }}
+		</div>
+
+		<!-- Confirm password field -->
+		<div class="form-group">
+			{{ form.company_name.label }}
+			{{ form.company_name(class="form-control") }}
+		</div>
+
+		<!-- Sponsorship level dropdown -->
+		<div class="form-group">
+			{{ form.sponsorship_level.label }}
+			{{ form.sponsorship_level(class="form-control") }}
+		</div>
+
+		<!-- Submit button -->
+		{{ form.submit(class="btn btn-primary") }}
+
+	</form>
+</div>
+{% endblock %}

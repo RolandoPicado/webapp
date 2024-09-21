@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">Welcome to AERO Festival</h1>
+    <p class="lead">Experience the future of electronic dance music.</p>
+    <hr class="my-4">
+    <p>Join us for an unforgettable journey through sound and technology.</p>
+    <a class="btn btn-primary btn-lg" href="{{ url_for('main.login') }}" role="button">Get Started</a>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Admin Dashboard</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Company Name</th>
+                <th>Sponsorship Level</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sponsor in sponsors %}
+            <tr>
+                <td>{{ sponsor.user.username }}</td>
+                <td>{{ sponsor.company_name }}</td>
+                <td>{{ sponsor.sponsorship_level }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
